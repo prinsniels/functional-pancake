@@ -1,0 +1,11 @@
+.bloop/
+.metals/
+target/
+
+.idea/
+.vscode/
+
+*.worksheet.sc
+.dotty-ide*
+
+metals.sbt
