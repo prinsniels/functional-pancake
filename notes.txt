@@ -1,0 +1,2 @@
+# On Clean Architecture
+https://medium.com/slalom-build/clean-architecture-with-java-11-f78bba431041
