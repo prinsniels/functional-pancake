@@ -1,7 +1,14 @@
+ThisBuild / organization := "com.github.prinsniels"
+ThisBuild / scalaVersion := "3.0.0-RC3"
 
+ThisBuild / scalacOptions := Seq("-unchecked", "-deprecation", "-language:higherKinds")
 
-ThisBuild / name := "ToDo"
-ThisBuild / scalaVersion := "2.13.3"
-ThisBuild / version := "0.0.1-SNAPSHOT"
+lazy val `playground` =
+  project
+    .in(file("playground"))
+    .settings(       
+      libraryDependencies ++= Seq(
+        "org.typelevel" %% "cats-core" % "2.3.1",
+        "org.typelevel" %% "cats-effect" % "2.3.1"
+      ))
 
-ThisBuild / scalacOptions := Seq("-unchecked", "-deprecation")
