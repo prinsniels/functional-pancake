@@ -1,14 +1,31 @@
-ThisBuild / organization := "com.github.prinsniels"
-ThisBuild / scalaVersion := "3.0.0-RC3"
+import Dependencies._
 
-ThisBuild / scalacOptions := Seq("-unchecked", "-deprecation", "-language:higherKinds")
+ThisBuild / scalaVersion := "2.13.3"
+
+ThisBuild / scalacOptions := Seq(
+  "-unchecked",
+  "-deprecation",
+  "-language:higherKinds"
+)
 
 lazy val `playground` =
   project
     .in(file("playground"))
-    .settings(       
-      libraryDependencies ++= Seq(
-        "org.typelevel" %% "cats-core" % "2.3.1",
-        "org.typelevel" %% "cats-effect" % "2.3.1"
-      ))
+    .settings(
+      name := "playground",
+      libraryDependencies := Seq(
+        Dependencies.cats.core,
+        Dependencies.cats.effect
+      )
+    )
 
+lazy val root =
+  project
+    .in(file("."))
+    .settings(
+      name := "pancake",
+      organization := "com.github.prinsniels",
+        libraryDependencies := Seq (
+          Dependencies.scalatest.core % Test
+        )
+    )
